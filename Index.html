@@ -1,0 +1,626 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Navbar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+ 
+ <body class="bg-purple-200 font-[Poppins] overflow-x-hidden">
+ 
+  <!-- Responsive Navbar -->
+  <header class="bg-[#caaef0] p-4" x-data="{ open: false }">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+      <!-- Logo & Brand -->
+      <div class="flex items-center gap-2">
+        <img src="images/Logo.svg" alt="Logo" class="h-10 w-10">
+        <span class="text-xl font-semibold">Craft My Plate</span>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex gap-6 font-semibold">
+        <a href="#" class="text-purple-700">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Work with Us</a>
+        <a href="#">Blogs</a>
+        <a href="#">Contact Us</a>
+      </nav>
+
+      <!-- WhatsApp -->
+      <div class="hidden md:flex items-center gap-2">
+        <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+        <span class="font-semibold">+91 8988988889</span>
+      </div>
+
+      <!-- Mobile Toggler -->
+      <button class="md:hidden text-2xl" @click="open = !open">
+        <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden mt-4 space-y-4 px-4" x-show="open" x-transition>
+      <a href="#" class="block text-purple-700 font-semibold">Home</a>
+      <a href="#" class="block font-semibold">About Us</a>
+      <a href="#" class="block font-semibold">Work with Us</a>
+      <a href="#" class="block font-semibold">Blogs</a>
+      <a href="#" class="block font-semibold">Contact Us</a>
+      <div class="flex items-center gap-2 pt-2">
+        <i class="fab fa-whatsapp text-green-500 text-xl"></i>
+        <span class="font-semibold">+91 8988988889</span>
+      </div>
+    </div>
+  </header>
+ 
+  <!-- Banner Section -->
+  <section class="py-20 px-5 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#6E19C4] to-[#34006A]">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center">
+
+        <!-- Left Content -->
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <div class="text-[#FFD54F] font-medium text-base mb-2">
+            <i class="fas fa-map-marker-alt mr-2 text-[#FFD700]"></i>
+            Currently Serving in <span class="font-bold text-[#FFD700]">HYDERABAD</span>
+          </div>
+
+          <h1 class="text-[#FFE37D] text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase leading-tight my-5">
+            INDIA’S FIRST FOOD CATERING APP
+          </h1>
+
+          <div class="text-[#e96f92] text-lg font-semibold mb-4">
+            You Customize, We Cater!
+          </div>
+
+          <div class="block md:hidden my-6">
+            <img src="images/image_4.webp" alt="Mobile Banner" class="mx-auto max-w-full h-auto" />
+          </div>
+
+          <p class="text-[#f1f1f1] text-sm leading-relaxed mb-6">
+            Experience personalized online bulk food catering, where every meal is tailored to your taste and budget. Create a customised culinary journey for birthdays, weddings, parties, and more.
+          </p>
+
+          <div>
+            <button class="bg-gradient-to-r from-[#f8c32d] to-[#f7aa32] text-black font-semibold px-8 py-3 rounded-full text-base flex items-center gap-3 mx-auto md:mx-0 mb-4">
+              <i class="fas fa-phone"></i> Request a Call
+            </button>
+
+            <div class="text-white font-semibold text-sm mb-2">GET THE APP ON</div>
+
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-3">
+              <a href="#" class="bg-black text-[#FFD54F] border-2 border-[#FFD54F] rounded-full px-6 py-2 text-sm font-semibold   items-center gap-2">
+                <i class="fab fa-apple text-lg"></i> Apple Store
+              </a>
+              <a href="#" class="bg-black text-[#FFD54F] border-2 border-[#FFD54F] rounded-full px-6 py-2 text-sm font-semibold   items-center gap-2">
+                <i class="fab fa-google-play text-lg"></i> Play Store
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="w-full md:w-1/2 relative hidden md:block mt-10 md:mt-0 text-center">
+          <img src="images/left food.png" alt="Food Dish" class="absolute -left-10 bottom-10 w-72 z-10">
+          <img src="images/image_4.webp" alt="Phone UI" class="relative z-20 max-h-[500px] mx-auto">
+          <img src="images/Welcomeimg.svg" alt="Elephant" class="absolute bottom-0 right-24 w-36 z-30">
+
+          <div class="absolute top-1/2 right-24 -translate-y-1/2 flex flex-col gap-4 z-40">
+            <a href="#" class="text-[#FFD54F] text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-[#FFD54F] text-xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-[#FFD54F] text-xl"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ <!-- Services Section -->
+ <section class="mt-20">
+  <h2 class="text-center text-3xl font-bold text-[#7027a0] mb-10">Our Service</h2>
+
+  <!-- Mobile Scroll View -->
+  <div class="flex md:hidden overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar px-6">
+    <!-- Card 1 -->
+    <div class="min-w-full snap-center px-3">
+      <div class="relative border-2 border-[#47b13c] rounded-2xl bg-white shadow-md p-6 flex flex-col items-center text-center">
+        <!-- Image hidden on mobile -->
+        <img src="images/mealbox.png" alt="Meal Box" class="hidden md:block absolute -top-24 w-56" />
+        <div class="text-green-600 text-xl"><i class="fas fa-utensils"></i></div>
+        <div class="text-green-600 font-bold text-lg">Meal Box</div>
+        <div class="text-gray-500 text-sm mb-2">👥 From 10 Guests onwards</div>
+        <p class="text-sm text-black mb-3">
+          Our meal box is perfect for any small or big event with a variety of meal options from starters, mains, and dessert etc.
+        </p>
+        <img src="images/mealbottom.png" class="max-h-12" />
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="min-w-full snap-center px-3">
+      <div class="relative border-2 border-[#ffa600] rounded-2xl bg-white shadow-md p-6 flex flex-col items-center text-center">
+        <img src="images/delivery.png" alt="Delivery Box" class="hidden md:block absolute -top-24 w-56" />
+        <div class="text-yellow-500 text-xl"><i class="fas fa-box"></i></div>
+        <div class="text-yellow-500 font-bold text-lg">Delivery Box</div>
+        <div class="text-gray-500 text-sm mb-2">👥 From 10 - 120 Guests</div>
+        <p class="text-sm text-black mb-3">
+          Perfect for your farm-house parties, small gatherings, and get-togethers! Explore a wide range of menu options at unbeatable prices.
+          <br><br><span class="font-semibold text-[#662d91]">Your go-to for affordable and hassle-free House & Farm-Houses Parties!</span>
+          <br><br><em>(Catering services available on request)</em>
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="min-w-full snap-center px-3">
+      <div class="relative border-2 border-[#df0d8f] rounded-2xl bg-white shadow-md p-6 flex flex-col items-center text-center">
+        <img src="images/image_5.png" alt="Catering" class="hidden md:block absolute -top-24 w-40 h-40 object-contain" />
+        <div class="text-pink-600 text-xl"><i class="fas fa-concierge-bell"></i></div>
+        <div class="text-pink-600 font-bold text-lg">Catering</div>
+        <div class="text-gray-500 text-sm mb-2">👥 From 10 Guests onwards</div>
+        <p class="text-sm text-black">
+          Best for your extravagant events like a wedding!
+          <br><br>Just choose one of our catering menu, get creative and customize it as you want.
+          <br><br>The choices are limitless and the flavours.
+        </p>
+      </div>
+    </div>
+  </div>
+
+ 
+  <!-- Desktop Grid View -->
+  <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto mt-40 px-12">
+    <!-- Card 1 -->
+    <div class="relative border-2 border-[#47b13c] rounded-2xl bg-white shadow-md p-6 flex flex-col items-center text-center">
+      <img src="images/mealbox.png" alt="Meal Box" class="absolute -top-24 w-56" />
+      <div class="mt-32 text-green-600 text-xl"><i class="fas fa-utensils"></i></div>
+      <div class="text-green-600 font-bold text-lg">Meal Box</div>
+      <div class="text-gray-500 text-sm mb-2">👥 From 10 Guests onwards</div>
+      <p class="text-sm text-black mb-3">
+        Our meal box is perfect for any small or big event with a variety of meal options from starters, mains, and dessert etc.
+      </p>
+      <img src="images/mealbottom.png" class="max-h-12" />
+    </div>
+
+    <!-- Card 2 -->
+    <div class="relative border-2 border-[#ffa600] rounded-2xl bg-white shadow-md p-6 flex flex-col items-center text-center">
+      <img src="images/delivery.png" alt="Delivery Box" class="absolute -top-24 w-56" />
+      <div class="mt-32 text-yellow-500 text-xl"><i class="fas fa-box"></i></div>
+      <div class="text-yellow-500 font-bold text-lg">Delivery Box</div>
+      <div class="text-gray-500 text-sm mb-2">👥 From 10 - 120 Guests</div>
+      <p class="text-sm text-black mb-3">
+        Perfect for your farm-house parties, small gatherings, and get-togethers! Explore a wide range of menu options at unbeatable prices.
+        <br><br><span class="font-semibold text-[#662d91]">Your go-to for affordable and hassle-free House & Farm-Houses Parties!</span>
+        <br><br><em>(Catering services available on request)</em>
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="relative border-2 border-[#df0d8f] rounded-2xl bg-white shadow-md p-6 flex flex-col items-center text-center">
+      <img src="images/image_5.png" alt="Catering" class="absolute -top-24 w-40 h-40 object-contain" />
+      <div class="mt-32 text-pink-600 text-xl"><i class="fas fa-concierge-bell"></i></div>
+      <div class="text-pink-600 font-bold text-lg">Catering</div>
+      <div class="text-gray-500 text-sm mb-2">👥 From 10 Guests onwards</div>
+      <p class="text-sm text-black">
+        Best for your extravagant events like a wedding!
+        <br><br>Just choose one of our catering menu, get creative and customize it as you want.
+        <br><br>The choices are limitless and the flavours.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="mt-20 px-4 md:px-10 xl:px-24">
+  <h2 class="text-center text-3xl font-bold text-[#7027a0] mb-4">Features</h2>
+  <p class="text-center mb-10 text-gray-500 text-sm md:text-base">
+    Discover handpicked premium features designed to enhance your<br class="hidden md:block"> culinary experience and elevate the quality of
+    services, ensuring that<br class="hidden md:block"> your events are truly exceptional.
+  </p>
+
+  <!-- Responsive Grid View for All Devices -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Feature 1 -->
+    <div class="flex items-center gap-12 border-2 border-yellow-400 rounded-2xl p-6 bg-white hover:shadow-lg transition-all">
+      <img src="images/image_12.png" alt="Customizable Menus" class="w-24 h-auto" />
+      <div>
+        <div class="font-semibold text-lg mb-1">Customize Menus</div>
+        <p class="text-gray-600 text-sm">Customize your menu or meal boxes with a<br> diverse selection of dishes.</p>
+      </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="flex items-center gap-12 border-2 border-yellow-400 rounded-2xl p-6 bg-white hover:shadow-lg transition-all">
+      <img src="images/image_13.png" alt="Dynamic Pricing" class="w-24 h-auto" />
+      <div>
+        <div class="font-semibold text-lg mb-1">Dynamic Pricing</div>
+        <p class="text-gray-600 text-sm">Price per plate decreases as the number<br> of guests increases.</p>
+      </div>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="flex items-center gap-12 border-2 border-yellow-400 rounded-2xl p-6 bg-white hover:shadow-lg transition-all">
+      <img src="images/image141.png" alt="Personal Order Executive" class="w-24 h-auto" />
+      <div>
+        <div class="font-semibold text-lg mb-1">Personal Order Executive</div>
+        <p class="text-gray-600 text-sm">A single point of contact for all your order<br> details, ensuring personalized service.</p>
+      </div>
+    </div>
+
+    <!-- Feature 4 -->
+    <div class="flex items-center gap-12 border-2 border-yellow-400 rounded-2xl p-6 bg-white hover:shadow-lg transition-all">
+      <img src="images/image151.png" alt="Order Status" class="w-24 h-auto" />
+      <div>
+        <div class="font-semibold text-lg mb-1">Order Status</div>
+        <p class="text-gray-600 text-sm">Receive updates on your order’s<br> status from preparation to delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Stats Banner Section -->
+<section class="bg-gradient-to-r from-[#6a11cb] to-[#8e2de2] py-8 text-white text-center mt-20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center justify-center md:justify-start text-lg font-semibold">
+        <span class="text-yellow-300 text-2xl mr-2">✨</span>
+        <h5 class="text-xl font-bold">Served Over <span class="text-yellow-300">40000+</span> Customers</h5>
+      </div>
+
+      <div class="flex gap-10 justify-center">
+        <div class="flex flex-col items-center">
+          <img src="images/image_15.png" class="w-10 mb-1" alt="Items" />
+          <div class="text-lg font-semibold">1,000+</div>
+          <div class="text-sm">Items</div>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="images/image_14.png" class="w-10 mb-1" alt="Downloads" />
+          <div class="text-lg font-semibold">31,000+</div>
+          <div class="text-sm">Downloads</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- How It Works Section -->
+<section class="mt-20 px-4 md:px-10 xl:px-24">
+  <h2 class="text-center text-3xl font-bold text-[#7027a0] mb-12">How It Works</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <!-- Steps -->
+    <div class="space-y-10">
+      <div class="flex items-center gap-6">
+        <img src="images/img1.png" alt="Step 1" class="w-16 h-16 object-contain" />
+        <p class="text-base font-medium">Pick <span class="text-yellow-500 font-semibold">Delivery Box</span>, <span class="text-green-600 font-semibold">Meal Box</span> or <span class="text-red-500 font-semibold">Catering</span></p>
+      </div>
+      <div class="flex items-center gap-6">
+        <img src="images/img22.png" alt="Step 2" class="w-16 h-16 object-contain" />
+        <p class="text-base font-medium">Add Items and Customize Your Own Menu</p>
+      </div>
+      <div class="flex items-center gap-6">
+        <img src="images/img3.png" alt="Step 3" class="w-16 h-16 object-contain" />
+        <p class="text-base font-medium">Place Your Order and It's that Simple!!!</p>
+      </div>
+    </div>
+    <!-- Video -->
+    <div>
+      <video controls class="w-full rounded-xl">
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<section class="mt-20 px-4 md:px-10 xl:px-24 text-center">
+  <h2 class="text-3xl font-bold text-[#7027a0] mb-2">Reviews</h2>
+  <p class="text-gray-500 mb-10">Have a look at our customers’ experience on our services and food we provide</p>
+
+  <!-- Mobile Carousel -->
+  <div class="block md:hidden">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide px-4">
+          <div class="relative bg-white rounded-2xl shadow-xl px-6 py-10 text-center mt-12">
+            <img src="images/santosh.jpg" alt="Shankar P" class="w-20 h-20 rounded-full border-4 border-yellow-400 object-cover absolute -top-10 left-1/2 transform -translate-x-1/2">
+            <img src="images/Marks.png" class="mx-auto mt-4 w-8 h-5">
+            <blockquote class="mt-4 text-sm">Thoroughly impressed by the hospitality & décor they provided at the food section of our event.</blockquote>
+            <div class="text-[#7a28cb] font-semibold mt-3">Shankar P</div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide px-4">
+          <div class="relative bg-white rounded-2xl shadow-xl px-6 py-10 text-center mt-12">
+            <img src="images/image_24.jpg" alt="Akshay" class="w-20 h-20 rounded-full border-4 border-yellow-400 object-cover absolute -top-10 left-1/2 transform -translate-x-1/2">
+            <img src="images/Marks.png" class="mx-auto mt-4 w-8 h-5">
+            <blockquote class="mt-4 text-sm">CMP team handled our order really well. They maintained hygiene and professionalism.</blockquote>
+            <div class="text-[#7a28cb] font-semibold mt-3">Akshay</div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide px-4">
+          <div class="relative bg-white rounded-2xl shadow-xl px-6 py-10 text-center mt-12">
+            <img src="images/akshay.jpg" alt="Santosh Vempati" class="w-20 h-20 rounded-full border-4 border-yellow-400 object-cover absolute -top-10 left-1/2 transform -translate-x-1/2">
+            <img src="images/Marks.png" class="mx-auto mt-4 w-8 h-5">
+            <blockquote class="mt-4 text-sm">CraftMyPlate made our intimate engagement event a day to remember.</blockquote>
+            <div class="text-[#7a28cb] font-semibold mt-3">Santosh Vempati</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop Cards -->
+  <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+    <!-- Review 1 -->
+    <div class="relative bg-white rounded-2xl shadow-xl px-6 py-10 text-center">
+      <img src="images/santosh.jpg" alt="Shankar P" class="w-20 h-20 rounded-full border-4 border-yellow-400 object-cover absolute -top-10 left-1/2 transform -translate-x-1/2">
+      <img src="images/Marks.png" class="mx-auto mt-4 w-8 h-5">
+      <blockquote class="mt-4 text-sm">Thoroughly impressed by the hospitality & décor they provided at the food section of our event.</blockquote>
+      <div class="text-[#7a28cb] font-semibold mt-3">Shankar P</div>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="relative bg-white rounded-2xl shadow-xl px-6 py-10 text-center">
+      <img src="images/akshay.jpg" alt="Akshay" class="w-20 h-20 rounded-full border-4 border-yellow-400 object-cover absolute -top-10 left-1/2 transform -translate-x-1/2">
+      <img src="images/Marks.png" class="mx-auto mt-4 w-8 h-5">
+      <blockquote class="mt-4 text-sm">CMP team handled our order really well. They maintained hygiene and professionalism.</blockquote>
+      <div class="text-[#7a28cb] font-semibold mt-3">Akshay</div>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="relative bg-white rounded-2xl shadow-xl px-6 py-10 text-center">
+      <img src="images/image_24.jpg" alt="Santosh Vempati" class="w-20 h-20 rounded-full border-4 border-yellow-400 object-cover absolute -top-10 left-1/2 transform -translate-x-1/2">
+      <img src="images/Marks.png" class="mx-auto mt-4 w-8 h-5">
+      <blockquote class="mt-4 text-sm">CraftMyPlate made our intimate engagement event a day to remember.</blockquote>
+      <div class="text-[#7a28cb] font-semibold mt-3">Santosh Vempati</div>
+    </div>
+  </div>
+</section>
+
+
+ <section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-center md:justify-between text-center md:text-left">
+
+      <div class="w-full md:w-5/12 relative mb-10 md:mb-0 flex justify-center order-1">
+        <img src="images/cafeimg.webp" alt="Chef" class="max-w-[50%] h-auto relative" />
+      </div>
+
+      <div class="w-full md:w-6/12 order-2">
+        <h2 class="text-purple-700 font-bold text-3xl mb-3">Work with Us</h2>
+        <p class="font-semibold mb-1">BECOME PART OF OUR TEAM</p>
+        <p class="mb-4">Register below to become a partner and start cooking for a wider audience.</p>
+        <button class="bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Check Eligibility</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="my-10">
+  <div class="mx-auto px-2 md:px-12 lg:px-12">
+    <div class="bg-gradient-to-br from-[#2b0053] to-[#8700d0] text-white rounded-3xl py-10 px-6 md:px-10 lg:px-16 relative flex flex-col md:flex-row items-center">
+
+      <!-- Image for Mobile -->
+      <div class="block md:hidden text-center mb-6 -mt-10">
+        <img src="images/mobieimage.webp" alt="App Screenshot" class="max-w-full h-auto" />
+      </div>
+
+      <!-- Text Column -->
+      <div class="md:w-1/2 px-4 md:px-6">
+        <h6 class="uppercase font-bold text-sm mb-2">Download the App Now</h6>
+        <h1 class="text-3xl md:text-4xl font-bold mb-3">Craft My Plate</h1>
+        <p class="mb-4 text-[#d1c9f9]">
+          Experience personalized online bulk food catering, where every meal is tailored to your taste and budget.
+          Create a customised culinary journey for birthdays, weddings, parties, and more.
+        </p>
+
+        <!-- Store Buttons for Desktop -->
+        <div class="hidden md:flex items-center gap-4 mt-3">
+          <a href="#" class="bg-black border-2 border-yellow-300 text-white py-2 px-5 rounded-full font-semibold flex items-center gap-2 hover:bg-[#030007] hover:border-[#ff6666] hover:scale-105 hover:shadow-xl transition">
+            <i class="fab fa-apple"></i> Apple Store
+          </a>
+          <a href="#" class="bg-black border-2 border-yellow-300 text-white py-2 px-5 rounded-full font-semibold flex items-center gap-2 hover:bg-[#030007] hover:border-[#ff6666] hover:scale-105 hover:shadow-xl transition">
+            <i class="fab fa-google-play"></i> Play Store
+          </a>
+        </div>
+      </div>
+
+      <!-- Image for Desktop -->
+      <div class="hidden md:block md:w-1/2 relative px-4 md:px-6">
+        <img src="images/mobieimage.webp" alt="App Screenshot" class="absolute top-1/2 right-10 transform -translate-y-1/2 max-w-[200px] z-10" />
+      </div>
+
+      <!-- Store Buttons for Mobile -->
+      <div class="block md:hidden text-center mt-6 px-4">
+        <h6 class="uppercase font-bold text-sm mb-2">Available On</h6>
+        <a href="#" class="bg-black border-2 border-yellow-300 text-white py-2 px-5 rounded-full font-semibold inline-flex items-center gap-2 mb-2 hover:bg-[#030007] hover:border-[#ff6666] hover:scale-105 hover:shadow-xl transition">
+          <i class="fab fa-apple"></i> Apple Store
+        </a>
+        <a href="#" class="bg-black border-2 border-yellow-300 text-white py-2 px-5 rounded-full font-semibold inline-flex items-center gap-2 hover:bg-[#030007] hover:border-[#ff6666] hover:scale-105 hover:shadow-xl transition">
+          <i class="fab fa-google-play"></i> Play Store
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="mt-20">
+  <div class="container mx-auto text-center px-6">
+    <h2 class="mb-6 text-[#5c1bb8] text-3xl font-bold">Events We Cater!</h2>
+
+    <div class="flex flex-wrap justify-center gap-3 px-6 md:px-16 lg:px-24">
+      <span class="px-6 py-2 bg-[#fdd8e8] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Birthdays</span>
+      <span class="px-6 py-2 bg-[#fff1d5] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Weddings</span>
+      <span class="px-6 py-2 bg-[#e3dcff] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Farmhouse Parties</span>
+      <span class="px-6 py-2 bg-[#fdd8e8] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Kids Party</span>
+      <span class="px-6 py-2 bg-[#fff1d5] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Sangeet</span>
+      <span class="px-6 py-2 bg-[#e3dcff] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Corporate Events</span>
+      <span class="px-6 py-2 bg-[#e3dcff] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Get Togethers</span>
+      <span class="px-6 py-2 bg-[#fff1d5] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Family Reunion</span>
+      <span class="px-6 py-2 bg-[#e3dcff] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Kids Party</span>
+      <span class="px-6 py-2 bg-[#fdd8e8] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Pool Party</span>
+      <span class="px-6 py-2 bg-[#fff1d5] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Tea Party</span>
+      <span class="px-6 py-2 bg-[#fdd8e8] text-[#4a3c6b] rounded-full text-base font-semibold min-w-[130px] hover:bg-[#551fba] hover:text-white hover:shadow-[0_0_10px_rgba(255,0,0,0.6),0_0_15px_rgba(255,0,0,0.4)] hover:scale-[1.02] transition-all">Cocktail Party</span>
+      <span class="px-6 py-2 bg-[#5c1bb8] text-[#ffd966] rounded-full text-base font-semibold min-w-[160px] hover:scale-[1.02] transition-all">and Many More!!!</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="px-4 md:px-10 lg:px-20 py-10">
+  <div class="flex flex-wrap justify-between items-center text-center sm:text-left mb-6">
+    <h2 class="text-[#6f2dbd] text-xl sm:text-2xl font-bold mb-2 sm:mb-0">Recent Blogs</h2>
+    <a href="#" class="text-gray-800 flex items-center gap-1 text-base font-medium hover:underline">
+      See More <span>&rarr;</span>
+    </a>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6 mt-4">
+    <!-- Blog Card 1 -->
+    <div class="rounded-xl overflow-hidden bg-[#f8f9fa] shadow-sm">
+      <img src="images/blog1.png" alt="Blog 1" class="w-full h-[300px] object-cover rounded-t-md" />
+      <div class="p-5">
+        <h3 class="text-base font-bold mb-2">5 Catering services Things to keep in mind while choosing</h3>
+        <p class="text-gray-500 text-sm mb-1">
+          <i class="bi bi-circle-fill text-xs mr-2"></i>May 9, 2024
+        </p>
+        <p class="text-sm text-gray-600">It can be overwhelming to plan any event, whether a...</p>
+      </div>
+    </div>
+
+    <!-- Blog Card 2 -->
+    <div class="rounded-xl overflow-hidden bg-[#f8f9fa] shadow-sm">
+      <img src="images/blog2.jpg" alt="Blog 2" class="w-full h-[300px] object-cover rounded-t-md" />
+      <div class="p-5">
+        <h3 class="text-base font-bold mb-2">Catering Services Trends For Weddings In 2024</h3>
+        <p class="text-gray-500 text-sm mb-1">
+          <i class="bi bi-circle-fill text-xs mr-2"></i>March 12, 2024
+        </p>
+        <p class="text-sm text-gray-600">Catering Services trends in 2024, Everyone</p>
+      </div>
+    </div>
+
+    <!-- Blog Card 3 -->
+    <div class="rounded-xl overflow-hidden bg-[#f8f9fa] shadow-sm">
+      <img src="images/blog3.webp" alt="Blog 3" class="w-full h-[300px] object-cover rounded-t-md" />
+      <div class="p-5">
+        <h3 class="text-base font-bold mb-2">Benefits of catering order?</h3>
+        <p class="text-gray-500 text-sm mb-1">
+          <i class="bi bi-circle-fill text-xs mr-2"></i>May 11, 2023
+        </p>
+        <p class="text-sm text-gray-600">Did you know that food catering services aren’t just for…</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-10 px-4 md:px-10 lg:px-20 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col lg:flex-row gap-10">
+
+      <!-- Left Contact Info -->
+      <div class="lg:w-2/5">
+        <h2 class="text-[#5c1bb8] text-3xl font-bold mb-3">Contact Us</h2>
+        <p class="mb-4">We’re always here to help you!</p>
+
+        <div class="mb-4">
+          <i class="fas fa-phone text-[#5c1bb8] mr-2"></i>
+          <strong>Contact Number</strong><br />
+          <a href="tel:+918988988889" class="text-gray-800 hover:underline">+91-8988988889</a>
+        </div>
+
+        <div class="mb-4">
+          <i class="fas fa-envelope text-[#5c1bb8] mr-2"></i>
+          <strong>Email</strong><br />
+          <a href="mailto:craftmyplate@gmail.com" class="text-gray-800 hover:underline">craftmyplate@gmail.com</a>
+        </div>
+
+        <div>
+          <i class="fas fa-location-dot text-[#5c1bb8] mr-2"></i>
+          <strong>Address</strong><br />
+          <p class="text-gray-700">
+            Plot No. 310, S. No. 66/3, Prashant Hills,<br />
+            Raidurg Hyderabad Pincode, 500032
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:w-3/5">
+        <h3 class="text-xl font-bold mb-6">We’d Love To Hear <span class="text-[#5c1bb8]">From You!</span></h3>
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Name" required class="border border-[#e3c9ff] rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6f2dbd]" />
+            <input type="email" placeholder="Email" required class="border border-[#e3c9ff] rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6f2dbd]" />
+            <input type="text" placeholder="Subject" required class="border border-[#e3c9ff] rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6f2dbd]" />
+            <input type="tel" placeholder="Phone Number" required class="border border-[#e3c9ff] rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6f2dbd]" />
+          </div>
+          <textarea rows="4" placeholder="Message" required class="border border-[#e3c9ff] rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#6f2dbd]"></textarea>
+          <button type="submit" class="bg-[#5e0cb5] hover:bg-[#5a32a3] text-white px-6 py-2 rounded-md font-semibold transition-all">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="border-t mt-10 pt-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+
+        <!-- App Store -->
+        <div class="flex justify-center md:justify-start gap-4">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" class="w-36">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" class="w-40">
+        </div>
+
+        <!-- Footer Links -->
+        <div class="flex flex-wrap justify-center gap-4 font-medium text-gray-800">
+          <a href="#" class="hover:underline">Home</a>
+          <a href="#" class="hover:underline">Services</a>
+          <a href="#" class="hover:underline">Wedding</a>
+          <a href="#" class="font-bold hover:underline">Contact Us</a>
+          <a href="#" class="hover:underline">Menu</a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="flex justify-center md:justify-end gap-4 text-[#ff5ba3] text-lg">
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <!-- Bottom Text -->
+      <div class="mt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+        <p>©2024 Craft My Plate. All rights reserved</p>
+        <div class="flex gap-4 mt-2 md:mt-0">
+          <a href="#" class="hover:underline">Privacy & Policy</a>
+          <a href="#" class="hover:underline">Terms & Condition</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</section>
+
+  <script src="Script.js"></script>
+</body>
+ 
+ 
+</html>
