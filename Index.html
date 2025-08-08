@@ -1,28 +1,30 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Navbar</title>
+  <title>CraftMyPlate2</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
 </head>
 
  
- <body class="bg-purple-200 font-[Poppins] overflow-x-hidden">
+ <body class="bg-purple-200 font-[Poppins] overflow-x-hidden ">
  
-  <!-- Responsive Navbar -->
+ 
   <header class="bg-[#caaef0] p-4" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
 
-      <!-- Logo & Brand -->
+    
       <div class="flex items-center gap-2">
         <img src="images/Logo.svg" alt="Logo" class="h-10 w-10">
         <span class="text-xl font-semibold">Craft My Plate</span>
       </div>
-
-      <!-- Desktop Nav -->
+ 
       <nav class="hidden md:flex gap-6 font-semibold">
         <a href="#" class="text-purple-700">Home</a>
         <a href="#">About Us</a>
@@ -30,34 +32,55 @@
         <a href="#">Blogs</a>
         <a href="#">Contact Us</a>
       </nav>
-
-      <!-- WhatsApp -->
+ 
       <div class="hidden md:flex items-center gap-2">
         <i class="fab fa-whatsapp text-green-500 text-xl"></i>
         <span class="font-semibold">+91 8988988889</span>
       </div>
-
-      <!-- Mobile Toggler -->
+ 
       <button class="md:hidden text-2xl" @click="open = !open">
         <i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i>
       </button>
     </div>
+ 
+   <div 
+  class="fixed inset-0 bg-white z-50 md:hidden flex items-center justify-center"
+  x-show="open" x-transition
+>
+  <button 
+    @click="open = false" 
+    class="absolute top-4 right-4 text-3xl font-bold text-gray-700 hover:text-purple-700 transition"
+    aria-label="Close Menu"
+  >
+    &times;
+  </button>
 
-    <!-- Mobile Menu -->
-    <div class="md:hidden mt-4 space-y-4 px-4" x-show="open" x-transition>
-      <a href="#" class="block text-purple-700 font-semibold">Home</a>
-      <a href="#" class="block font-semibold">About Us</a>
-      <a href="#" class="block font-semibold">Work with Us</a>
-      <a href="#" class="block font-semibold">Blogs</a>
-      <a href="#" class="block font-semibold">Contact Us</a>
-      <div class="flex items-center gap-2 pt-2">
-        <i class="fab fa-whatsapp text-green-500 text-xl"></i>
-        <span class="font-semibold">+91 8988988889</span>
-      </div>
+
+  <div class="flex flex-col items-center space-y-5 px-6 text-center">
+    <a href="#" class="text-purple-700 font-semibold">Home</a>
+    <a href="#" class="font-semibold">About Us</a>
+    <a href="#" class="font-semibold">Blogs</a>
+    <a href="#" class="font-semibold">Work with Us</a>
+
+    <!-- Social Icons -->
+    <div class="flex items-center gap-6 pt-2">
+      <i class="fab fa-whatsapp text-pink-500 text-2xl"></i>
+      <i class="fab fa-instagram text-pink-500 text-2xl"></i>
+      <i class="fab fa-facebook text-pink-500 text-2xl"></i>
     </div>
+
+    <!-- Contact Number -->
+    <div class="pt-3">
+      <p class="text-gray-500 text-sm">Give Us a Call</p>
+      <p class="text-xl font-bold"><span class="text-purple-700">+91</span> 8988988889</p>
+    </div>
+
+    <!-- Terms -->
+    <p class="text-gray-500 text-sm pt-4">Terms and Condition</p>
+  </div>
+</div>
   </header>
  
-  <!-- Banner Section -->
   <section class="py-20 px-5 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#6E19C4] to-[#34006A]">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row items-center">
@@ -120,16 +143,15 @@
     </div>
   </section>
 
- <!-- Services Section -->
- <section class="mt-20">
+  <section class="mt-20">
   <h2 class="text-center text-3xl font-bold text-[#7027a0] mb-10">Our Service</h2>
 
-  <!-- Mobile Scroll View -->
+   
   <div class="flex md:hidden overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar px-6">
-    <!-- Card 1 -->
+  
     <div class="min-w-full snap-center px-3">
       <div class="relative border-2 border-[#47b13c] rounded-2xl bg-white shadow-md p-6 flex flex-col items-center text-center">
-        <!-- Image hidden on mobile -->
+         
         <img src="images/mealbox.png" alt="Meal Box" class="hidden md:block absolute -top-24 w-56" />
         <div class="text-green-600 text-xl"><i class="fas fa-utensils"></i></div>
         <div class="text-green-600 font-bold text-lg">Meal Box</div>
@@ -171,9 +193,7 @@
       </div>
     </div>
   </div>
-
  
-  <!-- Desktop Grid View -->
   <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto mt-40 px-12">
     <!-- Card 1 -->
     <div class="relative border-2 border-[#47b13c] rounded-2xl bg-white shadow-md p-6 flex flex-col items-center text-center">
@@ -215,8 +235,6 @@
   </div>
 </section>
 
-
-
 <section class="mt-20 px-4 md:px-10 xl:px-24">
   <h2 class="text-center text-3xl font-bold text-[#7027a0] mb-4">Features</h2>
   <p class="text-center mb-10 text-gray-500 text-sm md:text-base">
@@ -224,7 +242,7 @@
     services, ensuring that<br class="hidden md:block"> your events are truly exceptional.
   </p>
 
-  <!-- Responsive Grid View for All Devices -->
+ 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     <!-- Feature 1 -->
     <div class="flex items-center gap-12 border-2 border-yellow-400 rounded-2xl p-6 bg-white hover:shadow-lg transition-all">
@@ -263,10 +281,7 @@
     </div>
   </div>
 </section>
-
-
-
-<!-- Stats Banner Section -->
+ 
 <section class="bg-gradient-to-r from-[#6a11cb] to-[#8e2de2] py-8 text-white text-center mt-20">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -290,10 +305,7 @@
     </div>
   </div>
 </section>
-
-
-
-<!-- How It Works Section -->
+ 
 <section class="mt-20 px-4 md:px-10 xl:px-24">
   <h2 class="text-center text-3xl font-bold text-[#7027a0] mb-12">How It Works</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -322,12 +334,11 @@
   </div>
 </section>
 
-
 <section class="mt-20 px-4 md:px-10 xl:px-24 text-center">
   <h2 class="text-3xl font-bold text-[#7027a0] mb-2">Reviews</h2>
   <p class="text-gray-500 mb-10">Have a look at our customers’ experience on our services and food we provide</p>
 
-  <!-- Mobile Carousel -->
+ 
   <div class="block md:hidden">
     <div class="swiper">
       <div class="swiper-wrapper">
@@ -392,7 +403,6 @@
   </div>
 </section>
 
-
  <section class="py-20 bg-white">
   <div class="container mx-auto px-4">
     <div class="flex flex-col md:flex-row items-center justify-center md:justify-between text-center md:text-left">
@@ -415,13 +425,11 @@
 <section class="my-10">
   <div class="mx-auto px-2 md:px-12 lg:px-12">
     <div class="bg-gradient-to-br from-[#2b0053] to-[#8700d0] text-white rounded-3xl py-10 px-6 md:px-10 lg:px-16 relative flex flex-col md:flex-row items-center">
-
-      <!-- Image for Mobile -->
+ 
       <div class="block md:hidden text-center mb-6 -mt-10">
         <img src="images/mobieimage.webp" alt="App Screenshot" class="max-w-full h-auto" />
       </div>
-
-      <!-- Text Column -->
+ 
       <div class="md:w-1/2 px-4 md:px-6">
         <h6 class="uppercase font-bold text-sm mb-2">Download the App Now</h6>
         <h1 class="text-3xl md:text-4xl font-bold mb-3">Craft My Plate</h1>
@@ -430,7 +438,7 @@
           Create a customised culinary journey for birthdays, weddings, parties, and more.
         </p>
 
-        <!-- Store Buttons for Desktop -->
+       
         <div class="hidden md:flex items-center gap-4 mt-3">
           <a href="#" class="bg-black border-2 border-yellow-300 text-white py-2 px-5 rounded-full font-semibold flex items-center gap-2 hover:bg-[#030007] hover:border-[#ff6666] hover:scale-105 hover:shadow-xl transition">
             <i class="fab fa-apple"></i> Apple Store
@@ -440,13 +448,12 @@
           </a>
         </div>
       </div>
-
-      <!-- Image for Desktop -->
+ 
       <div class="hidden md:block md:w-1/2 relative px-4 md:px-6">
         <img src="images/mobieimage.webp" alt="App Screenshot" class="absolute top-1/2 right-10 transform -translate-y-1/2 max-w-[200px] z-10" />
       </div>
 
-      <!-- Store Buttons for Mobile -->
+   
       <div class="block md:hidden text-center mt-6 px-4">
         <h6 class="uppercase font-bold text-sm mb-2">Available On</h6>
         <a href="#" class="bg-black border-2 border-yellow-300 text-white py-2 px-5 rounded-full font-semibold inline-flex items-center gap-2 mb-2 hover:bg-[#030007] hover:border-[#ff6666] hover:scale-105 hover:shadow-xl transition">
@@ -460,7 +467,6 @@
     </div>
   </div>
 </section>
-
 
 <section class="mt-20">
   <div class="container mx-auto text-center px-6">
@@ -532,7 +538,6 @@
   </div>
 </section>
 
-
 <section class="py-10 px-4 md:px-10 lg:px-20 bg-white">
   <div class="max-w-7xl mx-auto">
     <div class="flex flex-col lg:flex-row gap-10">
@@ -563,8 +568,7 @@
           </p>
         </div>
       </div>
-
-      <!-- Contact Form -->
+ 
       <div class="lg:w-3/5">
         <h3 class="text-xl font-bold mb-6">We’d Love To Hear <span class="text-[#5c1bb8]">From You!</span></h3>
         <form class="space-y-4">
@@ -579,8 +583,7 @@
         </form>
       </div>
     </div>
-
-    <!-- Footer Section -->
+ 
     <footer class="border-t mt-10 pt-6">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
 
